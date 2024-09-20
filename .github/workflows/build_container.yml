@@ -33,6 +33,7 @@ jobs:
           cd $GOPATH/src/github.com/sylabs && \
           sudo wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz && \
           sudo tar -xzf singularity-ce-${VERSION}.tar.gz && \
+          ls && pwd && \
           cd ./singularity && \
           ./mconfig
 
