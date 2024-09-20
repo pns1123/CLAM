@@ -28,6 +28,14 @@ jobs:
             squashfs-tools \
             libseccomp-dev \
             pkg-config
+          sudo apt-get update && sudo apt-get install -y \
+            build-essential \
+            libssl-dev \
+            uuid-dev \
+            libgpgme11-dev \
+            squashfs-tools \
+            libseccomp-dev \
+            pkgconf
           export VERSION=3.7.4 && # adjust this as necessary
           wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz && \
           tar -xzf singularity-ce-${VERSION}.tar.gz && \
