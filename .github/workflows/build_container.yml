@@ -1,0 +1,47 @@
+name: Build Singularity Container
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Install Singularity
+        run: |
+          sudo apt-get update && sudo apt-get install -y \
+            build-essential \
+            libssl-dev \
+            uuid-dev \
+            libgpgme11-dev \
+            squashfs-tools \
+            libseccomp-dev \
+            pkg-config
+          export VERSION=3.7.4 && # adjust this as necessary
+          wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz && \
+          tar -xzf singularity-ce-${VERSION}.tar.gz && \
+          cd singularity-ce-${VERSION} && \
+          ./mconfig && \
+          make -C builddir && \
+          sudo make -C builddir install
+
+      - name: Build Singularity container
+        run: |
+          sudo singularity build container.sif Singularity
+
+      - name: Upload Singularity container
+        uses: actions/upload-artifact@v2
+        with:
+          name: singularity-container
+          path: container.sif
