@@ -29,7 +29,7 @@ jobs:
             libseccomp-dev \
             pkgconf
           export VERSION=4.2.1 && # adjust this as necessary
-          mkdir -p $GOPATH/src/github.com/sylabs && \
+          sudo mkdir -p $GOPATH/src/github.com/sylabs && \
           cd $GOPATH/src/github.com/sylabs && \
           wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
           tar -xzf singularity-${VERSION}.tar.gz && \
