@@ -37,7 +37,7 @@ jobs:
           cd ./singularity-ce-${VERSION} && \
           sudo ./mconfig
           cd /src/github.com/sylabs/singularity-ce-4.2.1/builddir && \
-          make
+          sudo make
 
       - name: Build Singularity container
         run: |
