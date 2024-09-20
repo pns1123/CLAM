@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . /app
 
-RUN uv pip install --no-cache .
+RUN uv pip install --system --no-cache .
