@@ -31,7 +31,7 @@ jobs:
           export VERSION=4.2.1 && # adjust this as necessary
           sudo mkdir -p $GOPATH/src/github.com/sylabs && \
           cd $GOPATH/src/github.com/sylabs && \
-          wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
+          wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz && \
           tar -xzf singularity-${VERSION}.tar.gz && \
           cd ./singularity && \
           ./mconfig
