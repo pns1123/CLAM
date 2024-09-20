@@ -27,6 +27,7 @@ jobs:
             libgpgme11-dev \
             squashfs-tools \
             libseccomp-dev \
+            libfuse3-dev \
             pkgconf
           export VERSION=4.2.1 && # adjust this as necessary
           sudo mkdir -p $GOPATH/src/github.com/sylabs && \
