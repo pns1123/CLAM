@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN sudo apt-get update && \
-    sudo apt-get upgrade && \
-    sudo apt install openslide-tools python3-openslide
+RUN apt-get update && \
+    apt-get upgrade && \
+    apt install openslide-tools python3-openslide
 RUN uv pip install --system --no-cache .
