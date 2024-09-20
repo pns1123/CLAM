@@ -36,6 +36,8 @@ jobs:
           sudo tar -xzf singularity-ce-${VERSION}.tar.gz && \
           cd ./singularity-ce-${VERSION} && \
           sudo ./mconfig
+          cd /src/github.com/sylabs/singularity-ce-4.2.1/builddir && \
+          make
 
       - name: Build Singularity container
         run: |
