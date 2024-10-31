@@ -6,5 +6,6 @@ COPY . /app
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y gcc openslide-tools python3-openslide
+    apt-get install -y gcc openslide-tools python3-openslide ffmpeg libsm6 libxext6
+
 RUN uv pip install --system --no-cache .
