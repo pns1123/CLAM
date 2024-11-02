@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: clam:latest
+  IMAGE_NAME: clam
 
 jobs:
   build-and-push-image:
