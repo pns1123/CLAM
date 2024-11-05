@@ -22,7 +22,7 @@ class FeatureExtractionSettings(BaseSettings):
     csv_path: str
     feat_dir: str
     slide_ext: str = ".svs"
-    model: str = "resnet50_trunc"
+    model_name: str = "resnet50_trunc"
     batch_size: int = 256
     no_auto_skip: bool = False
     target_patch_size: int = 224
