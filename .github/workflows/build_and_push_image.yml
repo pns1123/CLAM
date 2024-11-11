@@ -38,5 +38,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: clam
+          tags: ${{ vars.GITLAB_REGISTRY }}/${{ env.IMAGE_NAME }}:clam
